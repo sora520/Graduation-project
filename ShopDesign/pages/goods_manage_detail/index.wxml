@@ -1,0 +1,43 @@
+<!--pages/goods_manage_detail/index.wxml-->
+<!-- <text>pages/goods_manage_detail/index.wxml</text> -->
+<!-- 商品缩略图 -->
+
+<!-- 商品轮播图 -->
+<view>商品轮播图：</view>
+<van-uploader file-list="{{ swiperList }}" bind:after-read="afterRead" max-count="4" 
+accept="image"
+bind:delete="deleteSwiper"/>
+
+<!-- 商品名称 -->
+<van-field
+  value="{{ value }}"
+  placeholder="{{goodsInfo.goodsName}}"
+  border="{{ false }}"
+  bind:change="codeChange"
+  label="商品名称"
+/>
+<!-- 商品简介 -->
+<van-field
+  value="{{ value }}"
+  placeholder="{{goodsInfo.goodsIntroduction}}"
+  border="{{ false }}"
+  bind:change="codeChange"
+  label="商品简介"
+/>
+<!-- 商品库存 -->
+<van-field
+  value="{{ value }}"
+  placeholder="{{goodsInfo.goodsInventory}}"
+  border="{{ false }}"
+  bind:change="codeChange"
+  label="商品库存"
+/>
+<!-- 商品价格 -->
+<van-field
+  value="{{ value }}"
+  placeholder="{{goodsInfo.goodsPrice}}"
+  border="{{ false }}"
+  bind:change="codeChange"
+  label="商品价格"
+/>
+

@@ -1,0 +1,62 @@
+<!-- 轮播 -->
+<view>
+<swiper autoplay indicator-dots class="swiper">
+<swiper-item wx:for="{{goodsInfo.goodsImgSrcJson}}" wx:key="index"><image src="{{item.url}}"></image></swiper-item>
+</swiper>
+</view>
+<!-- 商品信息 -->
+<view>
+<view class="">{{goodsInfo.goodsName}}</view>
+<view class="">{{goodsInfo.goodsIntroduction}}</view>
+<view class="">¥{{goodsInfo.goodsPrice/100}}</view>
+<view class="">库存{{goodsInfo.goodsInventory}}件</view>
+<view class="">已售{{goodsInfo.goodsSale}}件</view>
+
+</view>
+<!-- 商品详情&规格参数 -->
+<!-- <view>
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="商品详情"> 
+  <rich-text nodes="">
+  </rich-text>
+  </van-tab>
+  <van-tab title="规格参数"></van-tab>
+</van-tabs>
+</view> -->
+
+<!-- 商品详情图片 -->
+<!-- <view wx:for="{{goodsInfo.goodsImgSrc}}"><image src="{{item}}" class="detail_img"></image></view> -->
+
+<!-- 底栏 -->
+<view>
+<van-goods-action>
+  <van-goods-action-icon
+    icon="chat-o"
+    text="客服"
+    bind:click="onClickIcon"
+    open-type="contact"
+    disabled="{{buttonState!=0}}"
+  />
+  <van-goods-action-icon
+    icon="cart-o"
+    text="购物车"
+    bind:click="toCart"
+    info="{{cartNum}}"
+    disabled="{{buttonState!=0}}"
+  />
+  <van-goods-action-button
+    text="加入购物车"
+    type="warning"
+    bind:click="addCart"
+    disabled="{{buttonState!=0}}"
+  />
+  <van-goods-action-button
+    text="立即购买"
+    bind:click="onClickButton"
+    disabled="{{buttonState!=0}}"
+  />
+</van-goods-action>
+
+</view>
+
+

@@ -1,0 +1,15 @@
+<!--pages/goods_manage_list/index.wxml-->
+ <van-button round color="#000000" plain size="small" bind:click="openPopup" data-id="{{item.orderId}}">添加商品</van-button>
+<!-- 商品卡片 -->
+<view wx:for="{{goodsList}}" wx:key="index" class="manage_card">
+<navigator url="/pages/goods_detail/index?goodsId={{item.goodsId}}">
+<van-card
+  price="{{item.goodsPrice/100}}"
+  desc="{{item.goodsIntroduction}}"
+  title="{{item.goodsName}}"
+  thumb="{{item.goodsLogImg}}"
+  custom-class="shop_cart"
+/></navigator>
+ <van-button round color="#000000" plain size="small" bind:click="openPopup" data-id="{{item.orderId}}">编辑商品</van-button> <van-button round color="#000000" plain size="small" bind:click="openPopup" data-id="{{item.orderId}}">删除商品</van-button>
+</view>
+<view wx:if="{{isOver}}" class="goods_list_over">已经到底啦……</view>

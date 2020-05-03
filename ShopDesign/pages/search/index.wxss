@@ -1,0 +1,29 @@
+/* pages/search/index.wxss */
+
+.btn_serach{
+  color: white;
+}
+.btn_history{
+  float: left;
+  margin: 5px;
+  /* display: flex;
+  justify-content:center; */
+
+}
+
+.top{
+  display: flex;
+  justify-content:space-between;
+  margin: 10px;
+}
+/* icon_delete{
+  float: right; 
+  justify-content:flex-end;
+  display: flex;
+} */
+
+/* history_title{
+  float: left;
+  justify-content:flex-start;
+  display: flex;
+}  */

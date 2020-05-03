@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<!-- 首页 -->
+
+<!-- 搜索框 -->
+<view>
+<van-search 
+value="" 
+placeholder="请输入搜索关键词" 
+shape="round" 
+background="#D81E06"
+bind:tap="onClick"
+disabled
+/>
+</view>
+
+<!-- 轮播图 -->
+<swiper class="swiper" autoplay interval="2000" circular indicator-dots>
+<swiper-item wx:for="{{swiperList}}" wx:key="index">
+<navigator url="{{item.navigatorUrl}}"><image src="{{item.imgSrc}}"></image></navigator>
+</swiper-item>
+</swiper>
+
+<!-- 热门推荐 -->
+<!-- <view class="recommend_title"><image src="/image/recommend.png" mode="aspectFit"></image></view> -->
+<view class="recommend_title">热门推荐</view>
+<view class="all_img">
+<view wx:for="{{recommendList}}" wx:key="index">
+<navigator url="/pages/goods_detail/index?goodsId={{item.goodsId}}"><image src="{{item.goodsLogImg}}" ></image></navigator>
+</view>
+</view>

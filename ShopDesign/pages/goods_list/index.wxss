@@ -1,0 +1,6 @@
+/* pages/goodlist/index.wxss */
+.goods_list_over{
+  font-size: 15px;
+  color:gray;
+  text-align: center;
+}

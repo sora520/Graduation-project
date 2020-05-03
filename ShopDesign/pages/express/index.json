@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-steps": "../../vant/steps/index",
+    "van-divider": "../../vant/divider/index"
+  },
+  "navigationBarTitleText": "快递动态"
+}

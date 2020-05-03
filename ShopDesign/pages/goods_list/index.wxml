@@ -1,0 +1,10 @@
+<view wx:for="{{goodsList}}" wx:key="index">
+<navigator url="/pages/goods_detail/index?goodsId={{item.goodsId}}">
+<van-card
+  price="{{item.goodsPrice/100}}"
+  desc="{{item.goodsIntroduction}}"
+  title="{{item.goodsName}}"
+  thumb="{{item.goodsLogImg}}"
+/></navigator>
+</view>
+<view wx:if="{{isOver}}" class="goods_list_over">已经到底啦……</view>

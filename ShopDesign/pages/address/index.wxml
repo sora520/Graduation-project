@@ -1,0 +1,3 @@
+<!--pages/address/index.wxml-->
+<text>pages/address/index.wxml</text>
+<button bindtap="chooseAddress">获取地址</button>

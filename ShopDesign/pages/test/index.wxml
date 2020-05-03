@@ -1,0 +1,4 @@
+<!--pages/test/index.wxml-->
+<text>pages/test/index.wxml</text>
+<image class='img' bindtap="previewImage" src='{{scene}}'></image>
+<button open-type="contact">sad</button>

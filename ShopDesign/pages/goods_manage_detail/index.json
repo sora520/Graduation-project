@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-uploader": "/vant/uploader/index",
+    "van-dialog": "/vant/dialog/index",
+    "van-field": "/vant/field/index"
+  }
+}

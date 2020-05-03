@@ -1,0 +1,64 @@
+/* pages/order_detail/index.wxss */
+.van-cell__label{
+  color: black !important;
+}
+
+.van-cell__value{
+  color: black !important;
+}
+.title{
+    background-color: #D81E06;
+    display: flex;
+    justify-content:center;
+    height: 100rpx;
+    color: white;
+    font-size: 30rpx;
+}
+
+.order_price{
+  display: flex;
+  justify-content:space-between;
+  margin: auto 15px;
+}
+
+.order_price_num{
+  color: red;
+}
+
+
+
+.shop_cart{
+  background-color: white !important;
+}
+
+
+.info_all{
+  margin: auto 15px;
+}
+
+.info_title text{
+  color: red;
+}
+
+.info_id{
+  /* float: left; */
+  display: flex;
+  justify-content:space-between;
+  margin: 5px;
+  font-size: 30rpx;
+  color: #999;
+}
+.info_date{
+  display: flex;
+  justify-content:space-between;
+  margin: 5px;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tabbar{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  width: 50%;
+}

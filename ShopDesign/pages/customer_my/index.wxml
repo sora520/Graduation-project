@@ -1,0 +1,28 @@
+<!--pages/customer_my/index.wxml-->
+<!-- 头像及昵称 -->
+
+<view class="head">
+<!-- <navigator url="/pages/login/index" hover-class="none">
+<image src="{{UserInfo!=''?UserInfo.avatarUrl:'../../image/avatar.png'}}" class="headimg"></image>
+<text class="headtext">{{UserInfo!=''?UserInfo.nickName:'登录/注册'}}</text>
+</navigator> -->
+<view>
+<image src="{{UserInfo!=''?UserInfo.avatarUrl:'../../image/avatar.png'}}" class="headimg" bindtap="onLogin"></image>
+<text class="headtext" bindtap="onLogin">{{UserInfo!=''?UserInfo.nickName:'登录/注册'}}</text>
+</view>
+</view>
+
+<view>
+<van-cell-group>
+<van-cell title="全部订单" url="/pages/order_list/index" is-link/>
+<van-cell title="我的收货地址" bind:click="chooseAddress" is-link/>
+<!-- <van-cell title="常见问题" is-link/>
+<van-cell title="使用条款" is-link/>
+<van-cell title="隐私权政策" is-link/>
+<van-cell title="联系客服" is-link/> -->
+<view wx:if="{{UserInfo!=''}}"><van-cell title="退出登录" bind:click="btnQuit" is-link/></view>
+</van-cell-group>
+</view>
+
+
+

@@ -1,0 +1,41 @@
+
+/* .shopcard{
+  margin-bottom: 5vh;
+} */
+/* .van-card{
+  background-color: white !important;
+} */
+
+.scroll{
+  height: 90vh;
+}
+
+/* .checkbox{
+width: 20px;
+} */
+/* .shopcard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.card{
+  /* margin-left: 5px; */
+  /* margin: auto 5px; */
+}
+.shopcard{
+  /* margin: 5px 10px; */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  margin: 5px 5px;
+  background-color:#FAFAFA;
+}
+.checkbox{
+  margin: auto 5px;
+} 
+/* .footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */

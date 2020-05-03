@@ -1,0 +1,14 @@
+/* pages/goods_manage_list/index.wxss */
+.page{
+  background-color: #FAFAFA;
+  height: 100%;
+}
+
+.manage_card{
+  margin: 5px 5px;
+  background-color: white;
+}
+
+.shop_cart{
+  background-color: white !important;
+}

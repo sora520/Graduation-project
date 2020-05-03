@@ -1,0 +1,30 @@
+<!-- 收货地址 -->
+<button wx:if="{{address.length==0}}" bindtap="toAddress">获取地址</button>
+<view>{{address.userName}}</view>
+<!-- 商品卡片 -->
+<!-- <scroll-view scroll-y class="scroll"> -->
+  <van-checkbox-group value="{{ checked }}" bind:change="onChange">
+    <view wx:for="{{cartList}}" wx:key="index" class="shopcard">
+    <view class="checkbox"><van-checkbox name="{{item.goodsId}}"></van-checkbox></view>
+      <!-- <navigator url="/pages/goods_detail/index?goodsId={{item.goodsId}}"> -->
+      <van-card price="{{item.goodsPrice/100}}" desc="{{item.goodsIntroduction}}" title="{{item.goodsName}}" thumb="{{item.goodsLogImg}}" thumb-link="/pages/goods_detail/index?goodsId={{item.goodsId}}" custom-class="card" check="{{item.goodsId}}">
+        <view slot="footer" class="footer">
+        <!-- <view  class="checkbox"><van-checkbox name="{{item.goodsId}}"></van-checkbox></view> -->
+          <!-- 步进器 -->
+          <van-stepper data-id="{{item.goodsId}}" name="{{item.goodsId}}" value="{{ item.goodsNum }}" min="1" max="{{item.goodsInventory>999?999:item.goodsInventory}}" integer bind:change="numEdit" />
+        </view>
+      </van-card>
+      <!-- </navigator> -->
+    </view>
+  </van-checkbox-group>
+<!-- </scroll-view> -->
+
+<!-- 提交订单底栏 -->
+<view>
+  <van-submit-bar price="{{totalPrice}}" button-text="提交订单({{totalNum}})" bind:submit="submitOrder">
+    <van-checkbox value="{{ allChecked }}" bind:change="allChecked">全选</van-checkbox>
+  </van-submit-bar>
+</view>
+
+<!-- <view wx:if="{{isOver}}" class="goods_list_over">已经到底啦……</view> -->
+<!-- <view class="goods_list_over">已经到底啦……</view> -->

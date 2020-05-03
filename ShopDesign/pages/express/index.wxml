@@ -1,0 +1,9 @@
+<!--pages/express/index.wxml-->
+<view class="text_exp">{{expCode}}：{{expNo}}</view>
+<!-- <van-divider borderColor="red"></van-divider> -->
+<van-steps
+  steps="{{ expressList }}"
+  active="{{ 0 }}"
+  direction="vertical"
+  active-color="#ee0a24"
+/>

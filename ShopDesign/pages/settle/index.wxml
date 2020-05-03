@@ -1,0 +1,28 @@
+<!--pages/settle/index.wxml-->
+<!-- 结算页面 -->
+
+<!-- 选择收货地址 -->
+<view class="address_all">
+<view wx:if="{{address.userName}}">
+<van-cell title="{{address.userName}}" 
+value="{{address.telNumber}}" 
+label="{{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}" 
+bind:click="chooseAddress"
+is-link/>
+</view>
+<view  wx:if="{{!address.userName}}" class="btn_Address">
+<van-button round type="primary" bind:click="chooseAddress">获取收货地址</van-button>
+</view>
+</view>
+
+<!-- 商品列表 -->
+<scroll-view scroll-y class="scroll"> 
+    <view wx:for="{{settleList}}" wx:key="index" class="shopcard">
+      <van-card price="{{item.goodsPrice/100}}" desc="{{item.goodsIntroduction}}" title="{{item.goodsName}}" thumb="{{item.goodsLogImg}}" num="{{item.goodsNum}}">
+      </van-card>
+    </view> 
+</scroll-view>
+<!-- 结算底栏 -->
+<view>
+  <van-submit-bar price="{{totalPrice}}" button-text="结算" disabled="{{!address.userName}}" bind:submit="settleOrder"/>
+</view>

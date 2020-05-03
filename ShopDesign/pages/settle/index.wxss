@@ -1,0 +1,24 @@
+/* pages/settle/index.wxss */
+
+.van-submit-bar__text{
+  text-align: left !important;
+  margin: 10px;
+}
+
+.van-cell__label{
+  color: black !important;
+}
+
+.van-cell__value{
+  color: black !important;
+}
+
+/* address_all{
+  height: 150rpx;
+} */
+.btn_Address{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}

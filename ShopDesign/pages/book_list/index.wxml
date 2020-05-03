@@ -1,0 +1,10 @@
+<!--pages/book_list/index.wxml-->
+<view wx:for="{{bookList}}" wx:key="index">
+<navigator url="/pages/goods_detail/main?goods_id={{item.goods_id}}">
+<van-card
+  price="{{item.bookAuthor}}"
+  desc="{{item.bookIntroduction}}"
+  title="{{item.bookName}}"
+  thumb="/image/normal.jpg"
+/></navigator>
+</view>

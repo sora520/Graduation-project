@@ -1,0 +1,4 @@
+/* pages/express/index.wxss */
+.text_exp{
+  margin:5px 5px; 
+}

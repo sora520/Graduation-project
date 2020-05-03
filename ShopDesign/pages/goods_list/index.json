@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-card": "../vant/card/index",
+    "van-dropdown-menu": "../vant/dropdown-menu/index",
+    "van-dropdown-item": "../vant/dropdown-item/index"
+  },
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true
+}

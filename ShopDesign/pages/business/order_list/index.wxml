@@ -1,0 +1,77 @@
+<!--pages/business/order_list/index.wxml-->
+<!--pages/order/index.wxml-->
+<view class="page">
+  <!-- 标签页 -->
+  <van-tabs active="{{ active }}" bind:change="onTab">
+    <view wx:for="{{tabList}}" wx:key="index">
+      <van-tab title="{{item}}">
+        <!-- 订单卡片 -->
+        <view wx:for="{{orderList}}" wx:key="index" class="order_card">
+        <!-- 订单时间&订单状态 -->
+        <view class="order_card_top">
+          <view class="order_date">{{item.orderDate}}</view>
+          <view wx:if="{{item.orderState=='0'}}" class="order_state">订单待付款</view>
+          <view wx:if="{{item.orderState=='1'}}" class="order_state">订单待发货</view>
+          <view wx:if="{{item.orderState=='2'}}" class="order_state">订单已发货</view>
+          <view wx:if="{{item.orderState=='3'}}" class="order_state">订单已完成</view>
+          <view wx:if="{{item.orderState=='9'}}" class="order_state">订单已取消</view>
+        </view>
+          <!-- 商品卡片 -->
+          <van-card wx:for="{{item.goodsInfoJson}}" wx:key="index" price="{{item.goodsPrice/100}}" desc="{{item.goodsIntroduction}}" title="{{item.goodsName}}" thumb="{{item.goodsLogImg}}" num="{{item.goodsNum}}" custom-class="shop_cart" lazy-load />
+          <!-- 实付款&按钮 -->
+          <view class="order_card_down">
+            <view class="order_card_totalPrice">实付款：¥{{item.orderPrice/100}}</view>
+            <view wx:if="{{item.orderState==0}}">
+              <van-button round color="#000000" plain size="small" bind:click="openPopup" data-name="showCancel" data-id="{{item.orderId}}">取消订单</van-button>
+            </view>
+            <view>
+              <van-button round color="#000000" plain size="small" bind:click="toDetail" data-id="{{item.orderId}}">订单详情</van-button>
+            </view>
+            <view wx:if="{{item.orderState==1&&userType==1}}">
+              <van-button round color="#E65100" plain size="small" bind:click="toExpress" bind:click="openPopup" data-name="showSend" data-id="{{item.orderId}}">发货</van-button>
+            </view>
+            <view wx:if="{{item.orderState==2||item.orderState==3}}">
+              <van-button round color="#000000" data-name="{{item.expressCode}}" data-id="{{item.expressNo}}" plain size="small" bind:click="toExpress">查看物流</van-button>
+            </view>
+          </view>
+
+        </view>
+      </van-tab>
+    </view>
+  </van-tabs>
+</view>
+
+
+
+<!-- 商家发货提示弹窗-->
+<van-dialog
+  title="发货"
+  show="{{ showSend }}"
+  use-slot
+  show-cancel-button
+  show-confirm-button
+  bind:cancel="closePopup"
+  bind:confirm="sendExpress"
+>
+<view class="exp_input_all">
+  <van-field
+    value="{{ expCode }}"
+    placeholder="请输入快递识别码"
+    right-icon="info-o"
+    border="{{ false }}"
+    bind:change="codeChange"
+    label="快递识别码"
+    maxlength="5"
+  />
+  <van-field
+    value="{{ expNo }}"
+    placeholder="请输入快递单号"
+    border="{{ false }}"
+    bind:change="noChange"
+    label="快递单号"
+    maxlength="30"
+  />
+  </view>
+</van-dialog>
+
+

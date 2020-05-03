@@ -1,0 +1,5 @@
+<!--pages/category/index.wxml-->
+<text>pages/category/index.wxml</text>
+
+<button wx:if="{{address.length==0}}" bindtap="toAddress">获取地址</button>
+<view>{{address.userName}}</view>

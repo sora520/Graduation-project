@@ -1,0 +1,33 @@
+<!--pages/search/index.wxml-->
+<!-- 搜索框 -->
+<van-search 
+value="{{ searchkey }}" 
+placeholder="请输入搜索关键词" 
+shape="round" 
+use-action-slot
+focus
+background="#D81E06"
+bind:search="onSearch"
+bind:change="onChange"
+bindconfirm="onConfirm"
+>
+<view slot="action" bind:tap="onClick" class="btn_serach">搜索</view>
+</van-search>
+<!-- 搜索历史标题 & 清除历史按钮 -->
+<view wx:if="{{searchHistory}}" class="top">
+<view>搜索历史</view>
+<van-icon name="delete" bind:click="delHistory"/>
+</view>
+<!-- 搜索历史 -->
+<view wx:for="{{searchHistory}}" wx:key="index">
+<van-button
+type="warning"
+round 
+size="small" 
+id="{{item}}"
+class="btn_history"
+bind:click="onHistory"
+>{{item}}</van-button></view>
+<!-- <view >{{item}}</view> -->
+
+

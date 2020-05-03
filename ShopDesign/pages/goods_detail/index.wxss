@@ -1,0 +1,17 @@
+/* pages/goods_detail/index.wxss */
+
+.swiper{
+  height: 40vh;
+}
+.swiper image{
+  width: 100%;
+  height: 40vh;
+}
+.scroll{
+  float: left;
+  height: 40vh;
+}
+.detail_img{
+  width: 100%;
+}
+

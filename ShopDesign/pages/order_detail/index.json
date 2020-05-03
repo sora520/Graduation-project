@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-card": "../vant/card/index",
+    "van-cell": "../../vant/cell/index",
+    "van-button": "../../vant/button/index",
+    "van-tabbar": "../../vant/tabbar/index",
+    "van-dialog": "../../vant/dialog/index"
+  },
+  "navigationBarTitleText": "订单详情"
+}
